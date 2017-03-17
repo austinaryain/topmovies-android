@@ -8,14 +8,14 @@ public class Movie {
 
     private String title;
     private float rating;
-    private String thumbnail;
+    private int thumbnail;
     private String language;
     private String overview;
     private String releaseDate;
 
     public Movie(){ }
 
-    public Movie(String title, float rating, String thumbnail){
+    public Movie(String title, float rating, int thumbnail){
         this.title = title;
         this.rating = rating;
         this.thumbnail = thumbnail;
@@ -37,11 +37,11 @@ public class Movie {
         this.rating = rating;
     }
 
-    public String getThumbnail(){
+    public int getThumbnail(){
         return thumbnail;
     }
 
-    public void setThumbnail(String thumbnail){
+    public void setThumbnail(int thumbnail){
         this.thumbnail = thumbnail;
     }
 
