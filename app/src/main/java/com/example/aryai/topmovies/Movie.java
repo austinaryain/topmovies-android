@@ -1,5 +1,8 @@
 package com.example.aryai.topmovies;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by aryai on 3/16/2017.
  */
@@ -78,4 +81,5 @@ public class Movie {
     public void setReleaseDate(String releaseDate) {
         this.releaseDate = releaseDate;
     }
+
 }
