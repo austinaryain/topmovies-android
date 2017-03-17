@@ -8,17 +8,26 @@ public class Movie {
 
     private String title;
     private float rating;
-    private int thumbnail;
+    private String thumbnail;
     private String language;
     private String overview;
     private String releaseDate;
 
     public Movie(){ }
 
-    public Movie(String title, float rating, int thumbnail){
-        this.title = title;
+    public Movie(String title, float rating, String thumbnail){
         this.rating = rating;
+        this.title = title;
         this.thumbnail = thumbnail;
+    }
+
+    public Movie(String title, float rating, String thumbnail, String language, String overview, String releaseDate){
+        this.rating = rating;
+        this.title = title;
+        this.thumbnail = thumbnail;
+        this.language = language;
+        this.overview = overview;
+        this.releaseDate = releaseDate;
     }
 
     public String getTitle(){
@@ -37,11 +46,11 @@ public class Movie {
         this.rating = rating;
     }
 
-    public int getThumbnail(){
+    public String getThumbnail(){
         return thumbnail;
     }
 
-    public void setThumbnail(int thumbnail){
+    public void setThumbnail(String thumbnail){
         this.thumbnail = thumbnail;
     }
 
