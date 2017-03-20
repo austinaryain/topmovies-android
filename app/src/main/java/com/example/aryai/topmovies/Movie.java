@@ -1,9 +1,5 @@
 package com.example.aryai.topmovies;
 
-import android.graphics.Bitmap;
-import android.os.Parcel;
-import android.os.Parcelable;
-
 import net.redwarp.library.database.annotation.PrimaryKey;
 
 /**

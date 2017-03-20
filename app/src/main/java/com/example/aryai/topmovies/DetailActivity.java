@@ -1,21 +1,13 @@
 package com.example.aryai.topmovies;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
-import org.w3c.dom.Text;
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -46,9 +38,7 @@ public class DetailActivity extends AppCompatActivity {
         releaseTV.setText("Release Date: " + i.getStringExtra("RELEASEDATE"));
         languageTV.setText("Language: " + i.getStringExtra("LANGUAGE"));
 
-        Glide.with(DetailActivity.this).load(i.getStringExtra("THUMBNAIL")).into(thumbnailIV);
-
-
+        Picasso.with(DetailActivity.this).load(i.getStringExtra("THUMBNAIL")).into(thumbnailIV);
 
     }
 }

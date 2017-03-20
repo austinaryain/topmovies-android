@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -71,11 +71,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Movie movie = movieList.get(position);
-        Log.i("MOVIE!", movie.getTitle());
+
         holder.title.setText(movie.getTitle());
         holder.rating.setText("Rating: " + movie.getRating());
 
-        Glide.with(mContext).load(movie.getThumbnail()).into(holder.thumbnail);
+        Picasso.with(mContext).load(movie.getThumbnail()).into(holder.thumbnail);
 
         holder.overflow.setOnClickListener(new View.OnClickListener(){
 
