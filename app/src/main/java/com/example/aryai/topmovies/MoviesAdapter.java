@@ -3,6 +3,7 @@ package com.example.aryai.topmovies;
 import android.content.Context;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,6 +18,7 @@ import java.util.List;
 
 /**
  * Created by aryai on 3/16/2017.
+ * RecyclerView Adapter for Movie List on MainActivity
  */
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHolder> {
@@ -69,6 +71,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MyViewHold
     @Override
     public void onBindViewHolder(final MyViewHolder holder, int position) {
         Movie movie = movieList.get(position);
+        Log.i("MOVIE!", movie.getTitle());
         holder.title.setText(movie.getTitle());
         holder.rating.setText("Rating: " + movie.getRating());
 

@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import org.w3c.dom.Text;
 
 import java.io.InputStream;
@@ -44,42 +46,9 @@ public class DetailActivity extends AppCompatActivity {
         releaseTV.setText("Release Date: " + i.getStringExtra("RELEASEDATE"));
         languageTV.setText("Language: " + i.getStringExtra("LANGUAGE"));
 
-        new ImageLoadTask(i.getStringExtra("THUMBNAIL"), thumbnailIV).execute();
+        Glide.with(DetailActivity.this).load(i.getStringExtra("THUMBNAIL")).into(thumbnailIV);
 
-    }
 
-    public class ImageLoadTask extends AsyncTask<Void, Void, Bitmap> {
-
-        private String url;
-        private ImageView imageView;
-
-        public ImageLoadTask(String url, ImageView imageView) {
-            this.url = url;
-            this.imageView = imageView;
-        }
-
-        @Override
-        protected Bitmap doInBackground(Void... params) {
-            try {
-                URL urlConnection = new URL(url);
-                HttpURLConnection connection = (HttpURLConnection) urlConnection
-                        .openConnection();
-                connection.setDoInput(true);
-                connection.connect();
-                InputStream input = connection.getInputStream();
-                Bitmap myBitmap = BitmapFactory.decodeStream(input);
-                return myBitmap;
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap result) {
-            super.onPostExecute(result);
-            imageView.setImageBitmap(result);
-        }
 
     }
 }

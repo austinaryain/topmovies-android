@@ -12,60 +12,104 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/titleTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="serif"
                 android:text="{{ MovieTitle }}"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginTop="16dp"/>
+                app:layout_constraintHorizontal_bias="0.55"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
                 android:id="@+id/thumbIV"
                 android:layout_width="150dp"
                 android:layout_height="275dp"
-                android:layout_marginTop="16dp" />
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/overviewTV"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintVertical_bias="0.0" />
 
             <TextView
                 android:id="@+id/overviewTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="32dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
                 android:text="{{ OVERVIEW }}"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleTV" />
 
             <TextView
                 android:id="@+id/ratingTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="32dp"
                 android:gravity="center"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
                 android:text="{{ RATING }}"
-                android:layout_marginTop="24dp"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintLeft_toRightOf="@+id/thumbIV"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/releaseTV" />
 
             <TextView
                 android:id="@+id/releaseTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="128dp"
                 android:gravity="center"
-                android:layout_marginTop="16dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
                 android:text="{{ RELEASEDATE }}"
-                android:textAlignment="center" />
+                android:textAlignment="center"
+                app:layout_constraintHorizontal_bias="0.555"
+                app:layout_constraintLeft_toRightOf="@+id/thumbIV"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/overviewTV" />
 
             <TextView
                 android:id="@+id/languageTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="32dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
                 android:text="{{ LANGUAGE }}"
-                android:textAlignment="center" />
-        </LinearLayout>
+                android:textAlignment="center"
+                app:layout_constraintLeft_toRightOf="@+id/thumbIV"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingTV" />
+        </android.support.constraint.ConstraintLayout>
+
     </ScrollView>
 
 </LinearLayout>

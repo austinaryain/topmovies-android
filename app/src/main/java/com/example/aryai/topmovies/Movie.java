@@ -1,14 +1,20 @@
 package com.example.aryai.topmovies;
 
+import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import net.redwarp.library.database.annotation.PrimaryKey;
+
 /**
  * Created by aryai on 3/16/2017.
+ * Model class for Movie Data
  */
 
 public class Movie {
 
+    @PrimaryKey
+    public long key;
     private String title;
     private float rating;
     private String thumbnail;
@@ -16,7 +22,7 @@ public class Movie {
     private String overview;
     private String releaseDate;
 
-    public Movie(){ }
+    public Movie(){}
 
     public Movie(String title, float rating, String thumbnail){
         this.rating = rating;
